@@ -6,12 +6,14 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
+import { SidebarComponent } from './shared/sidebar.component/sidebar.component';
 import { HeroService } from 'app/shared/services/hero.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routedComponents
+    routedComponents,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
