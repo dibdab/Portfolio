@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Hero } from 'app/classes/hero';
 
 @Component({
@@ -7,5 +7,11 @@ import { Hero } from 'app/classes/hero';
     styleUrls: ['hero-list.component.less']
 })
 export class HeroListComponent {
-     @Input() hero: Hero;
+     @Input() heroes: Hero;
+
+     @Output() onSelectedHero: EventEmitter<Hero> = new EventEmitter<Hero>();
+
+     onSelect(hero: Hero): void {
+        this.onSelectedHero.emit(hero);
+     }
 }
