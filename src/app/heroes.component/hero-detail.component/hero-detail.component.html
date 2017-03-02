@@ -3,5 +3,9 @@
         {{hero.name}} details!
     </h2>
     <div><label>id:</label>{{hero.id}}</div>
-    <div><label for="heroName">Name:</label><input type="text" id="heroName" placeholder="Hero Name" [(ngModel)]="hero.name"></div>
+    <div>
+        <label for="heroName">Name:</label>
+        <input type="text" id="heroName" placeholder="Hero Name" [(ngModel)]="hero.name">
+    </div>
+    <button (click)="goBack()">Back</button>
 </div>

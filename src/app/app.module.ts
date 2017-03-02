@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
+import { HeroMiniDetailComponent } from './heroes.component';
 import { SidebarComponent } from './shared/sidebar.component/sidebar.component';
 import { HeroService } from 'app/shared/services/hero.service';
 
@@ -13,6 +14,7 @@ import { HeroService } from 'app/shared/services/hero.service';
   declarations: [
     AppComponent,
     routedComponents,
+    HeroMiniDetailComponent,
     SidebarComponent
   ],
   imports: [
