@@ -8,10 +8,12 @@ import { Hero } from 'app/classes/hero';
 })
 export class HeroListComponent {
      @Input() heroes: Hero;
+     selectedHero: Hero;
 
      @Output() onSelectedHero: EventEmitter<Hero> = new EventEmitter<Hero>();
 
      onSelect(hero: Hero): void {
+        this.selectedHero = hero;
         this.onSelectedHero.emit(hero);
      }
 }
