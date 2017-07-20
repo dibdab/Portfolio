@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent } from './dashboard.component/dashboard.component';
+import { HomepageComponent } from './homepage.component/homepage.component';
+import { AboutMePageComponent } from './aboutmepage.component/aboutmepage.component';
+import { BlogPageComponent } from './blogpage.component/blogpage.component';
+import { ContactPageComponent } from './contactpage.component/contactpage.component';
+import { ProjectsPageComponent } from './projectspage.component/projectspage.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomepageComponent },
+  { path: 'aboutme', component: AboutMePageComponent },
+  { path: 'blog', component: BlogPageComponent },
+  { path: 'contact', component: ContactPageComponent },
+  { path: 'projects', component: ProjectsPageComponent },
 ];
 
 @NgModule({
@@ -14,4 +22,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routedComponents = [DashboardComponent];
+export const routedComponents = [HomepageComponent, AboutMePageComponent, BlogPageComponent, ContactPageComponent, ProjectsPageComponent];
