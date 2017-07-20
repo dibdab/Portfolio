@@ -19,7 +19,7 @@
         "prefix": "app",
         "styles": [
             "styles.css",
-            "main.less"
+            "main.sass"
         ],
         "scripts": [],
         "environmentSource": "environments/environment.ts",

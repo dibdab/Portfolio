@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'hammerjs';
 
 import { AppRoutingModule, routedComponents } from './app-routing.module';
 
@@ -10,26 +12,24 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/services/in-memory-data.service';
 
 import { AppComponent } from './app.component';
-import { HeroMiniDetailComponent, HeroSearchComponent } from './heroes.component';
-import { SidebarComponent } from './shared/sidebar.component/sidebar.component';
-import { HeroService } from 'app/shared/services/hero.service';
+import { MaterialBarrelModule } from 'app/shared/modules/material.barrel.module';
+import { NavbarComponent } from './shared/components/navbar.component/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routedComponents,
-    HeroMiniDetailComponent,
-    HeroSearchComponent,
-    SidebarComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialBarrelModule
   ],
-  providers: [HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
