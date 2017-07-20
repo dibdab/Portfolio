@@ -1,12 +1,12 @@
 {
     "name": "",
     "icons": [{
-            "src": "https://dibdab.github.io/portfolio/assets/images/android-chrome-192x192.png?modifiedTS=20/07/2017",
+            "src": "https://dibdab.github.io/portfolio/assets/images/favicon/android-chrome-192x192.png?modifiedTS=20/07/2017",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "https://dibdab.github.io/portfolio/assets/images/android-chrome-512x512.png?modifiedTS=20/07/2017",
+            "src": "https://dibdab.github.io/portfolio/assets/images/favicon/android-chrome-512x512.png?modifiedTS=20/07/2017",
             "sizes": "512x512",
             "type": "image/png"
         }
