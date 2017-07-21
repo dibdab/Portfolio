@@ -1,0 +1,3 @@
+/* Only used by the compiler to merge all .less files here */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
