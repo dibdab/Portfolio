@@ -1,1 +1,31 @@
 @import 'styles/variables.scss';
+// Import all the tools needed to customize the theme and extract parts of it
+.viewer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.doc-wrapper {
+    padding: 20px 70px;
+    display: block;
+}
+
+.doc-viewer {
+    margin: 0 auto;
+}
+
+.header {
+    background-color: red; //TODO define custom theme
+}
+
+.header-title h1 {
+    font-size: 30px;
+    font-weight: 300;
+    margin: 0;
+    padding: 50px;
+}
+
+router-outlet {
+    max-width: 940px;
+}

@@ -9,11 +9,11 @@ import { ProjectsPageComponent } from './projectspage.component/projectspage.com
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'home', component: HomepageComponent },
-  { path: 'aboutme', component: AboutMePageComponent },
-  { path: 'blog', component: BlogPageComponent },
-  { path: 'contact', component: ContactPageComponent },
-  { path: 'projects', component: ProjectsPageComponent },
+  { path: 'home', component: HomepageComponent, data: { title: 'Dibdab' } },
+  { path: 'aboutme', component: AboutMePageComponent, data: { title: 'About Me' } },
+  { path: 'blog', component: BlogPageComponent, data: { title: 'Blog' } },
+  { path: 'contact', component: ContactPageComponent, data: { title: 'Contact' } },
+  { path: 'projects', component: ProjectsPageComponent, data: { title: 'Projects' } },
 ];
 
 @NgModule({
