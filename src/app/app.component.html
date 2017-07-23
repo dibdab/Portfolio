@@ -1,15 +1,5 @@
-<div>
-    <div class="header">
-        <app-navbar></app-navbar>
-        <div class="header-title">
-            <h1>{{title}}</h1>
-        </div>
-    </div>
-    <div class="viewer">
-        <div class='doc-wrapper mat-app-background'>
-            <div class="doc-viewer">
-                <router-outlet></router-outlet>
-            </div>
-        </div>
-    </div>
+<div class="mat-app-background mat-typography">
+    <app-navbar></app-navbar>
+    <app-primary-header></app-primary-header>
+    <router-outlet></router-outlet>
 </div>

@@ -1,35 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
+import { MdIconRegistry } from '@angular/material';
 
-import { AppRoutingModule, routedComponents } from './app-routing.module';
-
-// Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './shared/services/in-memory-data.service';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { MaterialBarrelModule } from 'app/shared/modules/material.barrel.module';
-import { NavbarComponent } from './shared/components/navbar.component/navbar.component';
+
+import { CoreModule } from './core/core.module';
+import { AboutMeModule } from './aboutme/aboutme.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    routedComponents,
-    NavbarComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialBarrelModule
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        CoreModule,
+        AboutMeModule
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+    constructor(mdIconRegistry: MdIconRegistry) {
+        mdIconRegistry.registerFontClassAlias('fontawesome', 'fa');
+    }
+}

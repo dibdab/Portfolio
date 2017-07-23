@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MaterialBarrelModule } from 'app/shared/modules/material.barrel.module';
 
 @Component({
     selector: 'app-navbar',

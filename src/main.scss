@@ -1,6 +1,0 @@
-@import 'app/styles/variables';
-@import 'app/styles/mixins';
-body {
-    margin: 0;
-    @include font-details;
-}

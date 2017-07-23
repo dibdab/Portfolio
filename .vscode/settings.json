@@ -1,4 +1,7 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true,
+    "eslint.autoFixOnSave": true,
+    "tslint.autoFixOnSave": true
 }

@@ -1,0 +1,16 @@
+@mixin primary-header-theme ($theme) {
+  $primary: map-get($theme, primary);
+  app-primary-header>div {
+    background-color: mat-color($primary);
+    margin: 0;
+    padding: 50px;
+  }
+}
+
+app-primary-header {
+  .primary-header-wrapper {
+    .mat-display-1 {
+      margin: 0;
+    }
+  }
+}
