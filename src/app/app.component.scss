@@ -1,19 +1,17 @@
 @import 'styles/mixins';
-.viewer {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+.header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .doc-wrapper {
-    padding: 20px 70px;
-    display: block;
-}
-
-.doc-viewer {
-    margin: 0 auto;
+  padding: 20px 70px;
+  display: block;
+  margin: 0 auto;
 }
 
 router-outlet {
-    max-width: 940px;
+  max-width: 940px;
 }

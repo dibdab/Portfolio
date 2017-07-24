@@ -3,12 +3,13 @@
   app-primary-header>div {
     background-color: mat-color($primary);
     margin: 0;
-    padding: 50px;
+    padding: 30px 50px 50px 50px;
   }
 }
 
 app-primary-header {
   .primary-header-wrapper {
+    height: 40px;
     .mat-display-1 {
       margin: 0;
     }
