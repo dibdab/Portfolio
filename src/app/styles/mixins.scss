@@ -1,14 +1,14 @@
-@import '../../../node_modules/@angular/material/_theming.scss';
+@import '~@angular/material/theming';
 @mixin font-stack {
-  font-family: 'Roboto', 'Noto Sans', sans-serif;
+    font-family: 'Roboto', 'Noto Sans', sans-serif;
 }
 
 @mixin electron-sun-theme($theme) {
-  // Extract whichever individual palettes you need from the theme.
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent); // Use mat-color to extract individual colors from a palette as necessary.
-  .electron-sun {
-    background-color: mat-color($primary);
-    border-color: mat-color($accent, A400);
-  }
+    // Extract whichever individual palettes you need from the theme.
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent); // Use mat-color to extract individual colors from a palette as necessary.
+    .electron-sun {
+        background-color: mat-color($primary);
+        border-color: mat-color($accent, A400);
+    }
 }
