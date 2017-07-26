@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdIconModule, MdButtonModule, MdToolbarModule } from '@angular/material';
 
+import { MaterialModule } from './material.module';
 import { DocViewerComponent } from './components/doc-viewer.component/doc-viewer.component';
 
 @NgModule({
-    imports: [CommonModule, MdIconModule, MdButtonModule, MdToolbarModule],
-    exports: [CommonModule, MdIconModule, MdButtonModule, MdToolbarModule, DocViewerComponent],
+    imports: [CommonModule, MaterialModule],
+    exports: [CommonModule, MaterialModule, DocViewerComponent],
     declarations: [DocViewerComponent],
     providers: [],
 })

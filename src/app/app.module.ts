@@ -7,6 +7,7 @@ import { MdIconRegistry } from '@angular/material';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './shared/material.module';
 import { CoreModule } from './core/core.module';
 import { AboutMeModule } from './aboutme/aboutme.module';
 
@@ -20,6 +21,7 @@ import { PageNotFoundComponent } from './page-not-found.component/page-not-found
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        MaterialModule,
         CoreModule,
         AboutMeModule,
         AppRoutingModule,

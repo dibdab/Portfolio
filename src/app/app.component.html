@@ -1,7 +1,16 @@
-<div class="mat-app-background mat-typography">
-    <div class="header">
-        <app-navbar></app-navbar>
-        <app-primary-header></app-primary-header>
+<div class="app-content mat-typography mat-app-background">
+    <app-primary-header></app-primary-header>
+    <div class="sidenav">
+        <a routerLink="aboutme" routerLinkActive="active" md-raised-button>
+            About Me <md-icon>face</md-icon>
+        </a>
+        <a routerLink="projects" routerLinkActive="active" md-button>Projects</a>
+        <a routerLink="blog" routerLinkActive="active" md-button>Blog</a>
+        <a routerLink="contact" routerLinkActive="active" md-button>Contact</a>
+        <div class="flex-spacer"></div>
+        <a href="https://github.com/dibdab/portfolio" md-button>
+            Github <md-icon fontSet="fontawesome" fontIcon="fa-github"></md-icon>
+        </a>
     </div>
     <div class="doc-wrapper">
         <router-outlet></router-outlet>

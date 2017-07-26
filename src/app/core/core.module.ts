@@ -1,7 +1,7 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
 // Imported for RouterLink used in navbar
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 import { NavbarComponent } from './navbar.component/navbar.component';
 import { PrimaryHeaderComponent } from './primary-header.component/primary-header.component';

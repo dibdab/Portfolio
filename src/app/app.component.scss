@@ -1,17 +1,41 @@
-@import 'styles/mixins';
-.header {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+@mixin sidenav-theme ($theme) {
+  $accent: map-get($theme, accent);
+  .sidenav {
+    background-color: mat-color($accent);
+  }
+}
+
+.app-content {
+  padding-top: $header-height;
+  padding-left: $sidenav-width;
+}
+
+.sidenav {
+  height: 100%;
+  min-width: $sidenav-width;
+  max-width: $sidenav-width;
+  display: flex;
+  flex-flow: column wrap;
+  text-transform: uppercase;
+  top: 100px;
+  left: 0;
   position: fixed;
-  width: 100%;
-  top: 0;
+  align-items: flex-start;
+  a {
+    min-width: $sidenav-width;
+    max-width: $sidenav-width;
+    text-align: left;
+    &:last-child {
+      margin-top: 100%;
+    }
+  }
 }
 
 .doc-wrapper {
-  padding: 20px 70px;
-  display: block;
+  width: 1160px;
   margin: 0 auto;
-}
-
-router-outlet {
-  max-width: 940px;
+  display: block;
+  padding-top: 40px;
 }

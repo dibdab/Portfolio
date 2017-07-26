@@ -4,6 +4,7 @@
 // Plus imports for other components in your app.
 @import '../core/navbar.component/navbar.component';
 @import '../core/primary-header.component/primary-header.component';
+@import '../app.component.scss';
 // **Be sure that you only ever include this mixin once!**
 @include mat-core();
 // Define the default theme (same as the example above).
@@ -26,6 +27,7 @@ $electron-moon-theme: mat-dark-theme($electron-moon-primary, $electron-moon-acce
 @mixin custom-compotents($theme) {
   @include navbar-theme($theme);
   @include primary-header-theme($theme);
+  @include sidenav-theme($theme);
 }
 
 @include custom-compotents($electron-sun-theme);

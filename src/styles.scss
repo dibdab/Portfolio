@@ -1,11 +1,14 @@
-@import 'app/styles/variables';
-@import 'app/styles/mixins';
-@import '~font-awesome/scss/font-awesome';
-@import 'app/styles/electron-sun-theme';
+//AOT compiation so all paths need to be relative and match file name and file extenstion exactly
+@import 'app/styles/variables.scss';
+@import 'app/styles/mixins.scss';
+@import '~font-awesome/scss/font-awesome.scss';
+@import 'app/styles/electron-sun-theme.scss';
 body {
   @include font-stack;
   margin: 0;
-  padding-top: 172px;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 .fa {
