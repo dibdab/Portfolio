@@ -4,7 +4,7 @@
 // Plus imports for other components in your app.
 @import '../core/navbar.component/navbar.component';
 @import '../core/primary-header.component/primary-header.component';
-@import '../app.component.scss';
+@import '../core/sidenav.component/sidenav.component';
 // **Be sure that you only ever include this mixin once!**
 @include mat-core();
 // Define the default theme (same as the example above).

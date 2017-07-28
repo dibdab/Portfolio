@@ -5,11 +5,12 @@ import { SharedModule } from '../shared/shared.module';
 
 import { NavbarComponent } from './navbar.component/navbar.component';
 import { PrimaryHeaderComponent } from './primary-header.component/primary-header.component';
+import { SidenavComponent } from './sidenav.component/sidenav.component';
 
 @NgModule({
     imports: [SharedModule, RouterModule],
-    exports: [NavbarComponent, PrimaryHeaderComponent],
-    declarations: [NavbarComponent, PrimaryHeaderComponent],
+    exports: [NavbarComponent, PrimaryHeaderComponent, SidenavComponent],
+    declarations: [NavbarComponent, PrimaryHeaderComponent, SidenavComponent],
     providers: [],
 })
 export class CoreModule {

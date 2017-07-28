@@ -13,10 +13,10 @@ export class PrimaryHeaderComponent implements OnInit {
 
     constructor(private route: ActivatedRoute, router: Router) {
         router.events
-        .filter(e => e instanceof NavigationEnd)
-        .forEach(e => {
-          this.title = route.root.firstChild.snapshot.data.title;
-        });
+            .filter(e => e instanceof NavigationEnd)
+            .forEach(e => {
+                this.title = route.root.firstChild.snapshot.data.title;
+            });
     }
     ngOnInit() { }
 }

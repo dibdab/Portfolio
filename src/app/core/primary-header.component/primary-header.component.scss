@@ -12,18 +12,10 @@ app-primary-header {
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
+    left: $sidenav-width;
     display: flex;
     margin: 0;
     min-height: $header-height;
-    button {
-      padding-right: 60px;
-      padding-bottom: 20px;
-      min-width: $sidenav-width;
-      md-icon {
-        font-size: 40px;
-      }
-    }
     .mat-display-1 {
       margin: 30px 30px;
     }

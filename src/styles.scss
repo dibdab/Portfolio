@@ -14,3 +14,11 @@ body {
 .fa {
   font-size: 24px;
 }
+
+[hidden] {
+  display: none !important;
+}
+
+.flex-spacer {
+  flex: auto;
+}

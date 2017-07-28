@@ -1,0 +1,43 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+@mixin sidenav-theme ($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  .sidenav {
+    background-color: mat-color($accent);
+    .header-spacer {
+      background-color: mat-color($primary);
+    }
+  }
+}
+
+.sidenav {
+  min-width: $sidenav-width;
+  max-width: $sidenav-width;
+  max-height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  nav {
+    height: calc(100vh - 16px);
+    padding: 8px 16px;
+    display: flex;
+    flex-flow: column wrap;
+    text-transform: uppercase;
+    align-items: flex-start;
+    a {
+      text-align: left;
+    }
+  }
+  .header-spacer {
+    height: $header-height;
+    min-height: $header-height;
+    button {
+      padding: 20px 0;
+      width: 100%;
+      md-icon {
+        font-size: 40px;
+      }
+    }
+  }
+}
