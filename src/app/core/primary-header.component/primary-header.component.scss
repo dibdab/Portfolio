@@ -23,5 +23,14 @@ app-primary-header {
         padding-left: 200px;
       }
     }
+    .header-spacer {
+      @include breakpoint-sidenavOpen-media {
+        visibility: hidden;
+      }
+      .sidenavToggleButton {
+        width: $header-height;
+        height: $header-height;
+      }
+    }
   }
 }

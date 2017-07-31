@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { AppSettings } from '../../classes/app-settings';
 import 'rxjs/RX';
 
 @Component({
@@ -10,6 +11,7 @@ import 'rxjs/RX';
 
 export class PrimaryHeaderComponent implements OnInit {
     @Output() callToggleNav = new EventEmitter();
+    @Output() uimaskToggle = new EventEmitter();
     private title: string;
 
     constructor(private route: ActivatedRoute, router: Router) {
@@ -22,6 +24,9 @@ export class PrimaryHeaderComponent implements OnInit {
 
     public onToggleNav() {
         this.callToggleNav.emit();
+        if (window.innerWidth < AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
+            this.uimaskToggle.emit();
+        }
     }
 
     ngOnInit() { }

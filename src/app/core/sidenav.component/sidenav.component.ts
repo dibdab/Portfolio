@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { AppSettings } from '../../classes/app-settings';
 
 @Component({
     selector: 'app-sidenav',
@@ -8,11 +9,9 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     animations: [
         trigger('sidenavState', [
             state('closed', style({
-                display: 'hidden',
                 transform: 'translateX(-300px)'
             })),
             state('open', style({
-                display: 'block',
                 transform: 'translateX(0)'
             })),
             transition('closed => open', animate('300ms ease-in')),
@@ -26,7 +25,7 @@ export class SidenavComponent implements OnInit {
     private sidenavState: string;
 
     ngOnInit() {
-        if (window.innerWidth < 1480) {
+        if (window.innerWidth < AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
             this.sidenavState = 'closed';
         } else {
             this.sidenavState = 'open';
@@ -34,9 +33,9 @@ export class SidenavComponent implements OnInit {
     }
 
     @HostListener('window:resize', ['$event']) onResize(event) {
-        if (event.target.innerWidth < 1480) {
+        if (event.target.innerWidth < AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
             this.sidenavState = 'closed';
-        } else if (event.target.innerWidth >= 1480) {
+        } else if (event.target.innerWidth >= AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
             this.sidenavState = 'open';
         }
     }

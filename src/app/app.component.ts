@@ -6,23 +6,33 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     templateUrl: 'app.component.html',
     styleUrls: ['./app.component.scss'],
     animations: [
-        trigger('sidenavState', [
-            state('closed', style({
-                display: 'hidden',
-                transform: 'translateX(-300px)'
+        trigger('uimaskVisibility', [
+            state('hidden', style({
+                visibility: 'hidden',
+                opacity: 0
             })),
-            state('open', style({
-                display: 'block',
-                transform: 'translateX(0)'
+            state('visible', style({
+                visibility: 'visible',
+                opacity: 1
             })),
-            transition('closed => open', animate('300ms ease-in')),
-            transition('open => closed', animate('300ms ease-out'))
+            transition('hidden => visible', animate('150ms ease-in')),
+            transition('visible => hidden', animate('150ms ease-out'))
         ])
     ]
 })
 export class AppComponent implements OnInit {
+    private uimaskVisibility = 'hidden';
+
     constructor() { }
 
     ngOnInit() {
+    }
+
+    public uimaskToggle() {
+        if (this.uimaskVisibility === 'hidden') {
+            this.uimaskVisibility = 'visible';
+        } else {
+            this.uimaskVisibility = 'hidden';
+        }
     }
 }
