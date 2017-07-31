@@ -21,7 +21,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ]
 })
 export class AppComponent implements OnInit {
-    private uimaskVisibility = 'hidden';
+    uimaskVisibility = 'hidden';
 
     constructor() { }
 

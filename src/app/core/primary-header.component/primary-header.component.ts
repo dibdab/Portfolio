@@ -12,7 +12,7 @@ import 'rxjs/RX';
 export class PrimaryHeaderComponent implements OnInit {
     @Output() callToggleNav = new EventEmitter();
     @Output() uimaskToggle = new EventEmitter();
-    private title: string;
+    title: string;
 
     constructor(private route: ActivatedRoute, router: Router) {
         router.events

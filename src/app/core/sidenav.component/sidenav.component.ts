@@ -22,7 +22,7 @@ import { AppSettings } from '../../classes/app-settings';
 
 export class SidenavComponent implements OnInit {
     @ViewChild('sidenav') sidenav;
-    private sidenavState: string;
+    sidenavState: string;
 
     ngOnInit() {
         if (window.innerWidth < AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
