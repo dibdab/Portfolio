@@ -14,26 +14,27 @@
 .sidenav {
   min-width: $sidenav-width;
   max-width: $sidenav-width;
-  max-height: 100vh;
+  height: 100%;
   top: 0;
   left: 0;
   position: fixed;
   z-index: 4;
   nav {
-    height: calc(100vh - 16px);
+    height: 90%;
     padding: 8px 16px;
     display: flex;
     flex-flow: column wrap;
     text-transform: uppercase;
     align-items: flex-start;
+    position: relative;
     a {
       text-align: left;
     }
   }
   .header-spacer {
     height: $header-height/1.5;
-    min-height: $header-height/1.5;
     border: 1px solid black;
+    position: relative;
     button {
       padding: 20px 0;
       width: 100%;
