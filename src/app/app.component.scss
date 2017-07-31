@@ -2,12 +2,40 @@
 @import 'styles/variables.scss';
 .app-content {
   padding-top: $header-height;
-  padding-left: $sidenav-width;
+  z-index: 1;
 }
 
 .doc-wrapper {
-  width: 1160px;
   margin: 0 auto;
   display: block;
-  padding-top: 40px;
+  padding: 40px 16px;
+  @include breakpoint-xs-media {
+    width: 360px;
+  }
+  @include breakpoint-s-media {
+    width: 540px;
+  }
+  @include breakpoint-m-media {
+    width: 740px;
+  }
+  @include breakpoint-l-media {
+    width: 940px;
+  }
+  @include breakpoint-sidenavOpen-media {
+    padding-left: $sidenav-width;
+  }
+  @include breakpoint-xl-media {
+    width: 1160px;
+  }
+}
+
+.ui-mask {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, .5);
+  position: fixed;
 }

@@ -1,4 +1,5 @@
 @import '~@angular/material/_theming.scss';
+@import './variables.scss';
 @mixin font-stack {
   font-family: 'Roboto', 'Noto Sans', sans-serif;
 }
@@ -13,16 +14,38 @@
   }
 }
 
-$tablet-width: 768px;
-$desktop-width: 1024px;
-@mixin tablet {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+@mixin breakpoint-xs-media {
+  @media (min-width: #{$breakpoint-xs}) and (max-width: #{$breakpoint-s - 1px}) {
     @content;
   }
 }
 
-@mixin desktop {
-  @media (min-width: #{$desktop-width}) {
+@mixin breakpoint-s-media {
+  @media (min-width: #{$breakpoint-s}) and (max-width: #{$breakpoint-m - 1px}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-m-media {
+  @media (min-width: #{$breakpoint-m}) and (max-width: #{$breakpoint-l - 1px}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-l-media {
+  @media (min-width: #{$breakpoint-l}) and (max-width: #{$breakpoint-xl - 1px}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-sidenavOpen-media {
+  @media (min-width: #{1480px}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xl-media {
+  @media (min-width: #{$breakpoint-xl}) {
     @content;
   }
 }

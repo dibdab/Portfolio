@@ -18,6 +18,7 @@
   top: 0;
   left: 0;
   position: fixed;
+  z-index: 4;
   nav {
     height: calc(100vh - 16px);
     padding: 8px 16px;
@@ -30,8 +31,9 @@
     }
   }
   .header-spacer {
-    height: $header-height;
-    min-height: $header-height;
+    height: $header-height/1.5;
+    min-height: $header-height/1.5;
+    border: 1px solid black;
     button {
       padding: 20px 0;
       width: 100%;
