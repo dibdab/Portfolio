@@ -16,11 +16,15 @@ app-primary-header {
     display: flex;
     margin: 0;
     min-height: $header-height;
+    height: $header-height;
     z-index: 2;
     .mat-display-1 {
-      margin: 30px 30px;
+      margin: 30px 16px;
       @include breakpoint-sidenavOpen-media {
         padding-left: 200px;
+      }
+      @include breakpoint-xs-media {
+        font-size: 34px;
       }
     }
     .header-spacer {
@@ -29,7 +33,7 @@ app-primary-header {
       }
       .sidenavToggleButton {
         width: $header-height;
-        height: $header-height;
+        height: 100%;
       }
     }
   }

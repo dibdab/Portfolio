@@ -15,7 +15,7 @@
 }
 
 @mixin breakpoint-xs-media {
-  @media (min-width: #{$breakpoint-xs}) and (max-width: #{$breakpoint-s - 1px}) {
+  @media (max-width: #{$breakpoint-xs}) {
     @content;
   }
 }
