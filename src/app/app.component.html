@@ -1,9 +1,9 @@
-<div class="app-content mat-typography mat-app-background">
-    <app-primary-header (callToggleNav)="appsidenav.toggleNav(); uimaskToggle();"></app-primary-header>
+<div [class.uimask-scrollblock]="uimaskVisibility === 'visible'" class="app-content mat-typography mat-app-background">
+    <app-primary-header (callChangeSidenavState)="appsidenav.changeSidenavState(); changeUimaskState();"></app-primary-header>
     <app-sidenav #appsidenav></app-sidenav>
     <div class="doc-wrapper">
         <router-outlet></router-outlet>
     </div>
 </div>
-<div [@uimaskVisibility]="uimaskVisibility" (click)="uimaskToggle(); appsidenav.toggleNav();" class="ui-mask" aria-label="Hide Navigation"
-    title="Hide Navigation"></div>
+<div [@uimaskVisibility]="uimaskVisibility" (click)="changeUimaskState(); appsidenav.changeSidenavState();" class="ui-mask"
+    aria-label="Hide Navigation" title="Hide Navigation"></div>

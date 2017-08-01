@@ -22,26 +22,28 @@ import { AppSettings } from '../../classes/app-settings';
 
 export class SidenavComponent implements OnInit {
     @ViewChild('sidenav') sidenav;
-    sidenavState: string;
+    private sidenavState: string;
 
     ngOnInit() {
         if (window.innerWidth < AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
-            this.sidenavState = 'closed';
+            this.changeSidenavState('closed');
         } else {
-            this.sidenavState = 'open';
+            this.changeSidenavState('open');
         }
     }
 
     @HostListener('window:resize', ['$event']) onResize(event) {
         if (event.target.innerWidth < AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
-            this.sidenavState = 'closed';
+            this.changeSidenavState('closed');
         } else if (event.target.innerWidth >= AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
-            this.sidenavState = 'open';
+            this.changeSidenavState('open');
         }
     }
 
-    public toggleNav() {
-        if (this.sidenavState === 'closed') {
+    public changeSidenavState(state?: string) {
+        if (state) {
+            this.sidenavState = state;
+        } else if (this.sidenavState === 'closed') {
             this.sidenavState = 'open';
         } else {
             this.sidenavState = 'closed';

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { SidenavComponent } from './core/sidenav.component/sidenav.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -21,15 +23,28 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ]
 })
 export class AppComponent implements OnInit {
-    uimaskVisibility = 'hidden';
+    @ViewChild(SidenavComponent)
+    private sidenavComponent: SidenavComponent;
+    private router: Router;
+    private uimaskVisibility = 'hidden';
 
-    constructor() { }
-
-    ngOnInit() {
+    constructor(router: Router) {
+        this.router = router;
     }
 
-    public uimaskToggle() {
-        if (this.uimaskVisibility === 'hidden') {
+    ngOnInit() {
+        this.router.events.subscribe(event => {
+            if (event instanceof NavigationStart) {
+                this.changeUimaskState('hidden');
+                this.sidenavComponent.changeSidenavState('closed');
+            }
+        });
+    }
+
+    public changeUimaskState(state?: string) {
+        if (state) {
+            this.uimaskVisibility = state;
+        } else if (this.uimaskVisibility === 'hidden') {
             this.uimaskVisibility = 'visible';
         } else {
             this.uimaskVisibility = 'hidden';
