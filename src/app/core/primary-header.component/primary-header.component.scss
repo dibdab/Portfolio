@@ -2,8 +2,11 @@
 @import '../../styles/mixins.scss';
 @mixin primary-header-theme ($theme) {
   $primary: map-get($theme, primary);
-  app-primary-header>div {
+  $foreground: map-get($theme, foreground);
+  $text: map-get($foreground, text);
+  app-primary-header>.primary-header-wrapper {
     background-color: mat-color($primary);
+    color: $text;
   }
 }
 
@@ -18,7 +21,6 @@ app-primary-header {
     min-height: $header-height;
     height: $header-height;
     z-index: 2;
-    border-bottom: 1px solid #3a3a3a;
     .mat-display-1 {
       margin: 30px 16px;
       @include breakpoint-sidenavOpen-media {

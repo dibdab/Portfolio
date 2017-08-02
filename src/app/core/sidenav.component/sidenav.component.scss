@@ -3,18 +3,21 @@
 @mixin sidenav-theme ($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+  $text: map-get($foreground, text);
+  $divider: map-get($foreground, divider);
   .sidenav {
     background-color: mat-color($accent);
-    .header-spacer {
-      background-color: mat-color($primary);
-    }
+    color: $text;
+  }
+  .header-spacer {
+    border-bottom: $divider solid 1px;
   }
 }
 
 .sidenav {
   min-width: $sidenav-width;
   max-width: $sidenav-width;
-  border-right: 1px solid #3a3a3a;
   height: 100vh;
   top: 0;
   left: 0;
@@ -35,7 +38,6 @@
   }
   .header-spacer {
     height: 7.5%;
-    border-bottom: 1px solid #3a3a3a;
     position: relative;
     button {
       padding: 20px 0;
