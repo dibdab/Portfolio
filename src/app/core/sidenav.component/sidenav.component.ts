@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { AppSettings } from '../../classes/app-settings';
 
@@ -32,21 +32,17 @@ export class SidenavComponent implements OnInit {
         }
     }
 
-    @HostListener('window:resize', ['$event']) onResize(event) {
-        if (event.target.innerWidth < AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
-            this.changeSidenavState('closed');
-        } else if (event.target.innerWidth >= AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
-            this.changeSidenavState('open');
-        }
-    }
-
     public changeSidenavState(state?: string) {
-        if (state) {
-            this.sidenavState = state;
-        } else if (this.sidenavState === 'closed') {
-            this.sidenavState = 'open';
-        } else {
-            this.sidenavState = 'closed';
+        if (state !== this.sidenavState) {
+            if (window.innerWidth > AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
+                this.sidenavState = 'open';
+            } else if (state) {
+                this.sidenavState = state;
+            } else if (this.sidenavState === 'closed') {
+                this.sidenavState = 'open';
+            } else {
+                this.sidenavState = 'closed';
+            }
         }
     }
 }

@@ -1,7 +1,8 @@
 import { SidenavComponent } from './core/sidenav.component/sidenav.component';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { AppSettings } from './classes/app-settings';
 
 @Component({
     selector: 'app-root',
@@ -36,9 +37,21 @@ export class AppComponent implements OnInit {
         this.router.events.subscribe(event => {
             if (event instanceof NavigationStart) {
                 this.changeUimaskState('hidden');
-                this.sidenavComponent.changeSidenavState('closed');
+                if (window.innerWidth < AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
+                    this.sidenavComponent.changeSidenavState('closed');
+                }
             }
         });
+    }
+
+
+    @HostListener('window:resize', ['$event']) onResize(event) {
+        if (event.target.innerWidth >= AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
+            this.sidenavComponent.changeSidenavState('open');
+            this.changeUimaskState('hidden');
+        } else if (event.target.innerWidth < AppSettings.SIDENAV_WIDTH_BREAKPOINT && this.uimaskVisibility === 'hidden') {
+            this.sidenavComponent.changeSidenavState('closed');
+        }
     }
 
     public changeUimaskState(state?: string) {
