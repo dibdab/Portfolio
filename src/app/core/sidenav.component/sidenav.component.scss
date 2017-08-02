@@ -4,17 +4,30 @@
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
   $text: map-get($foreground, text);
   $divider: map-get($foreground, divider);
+  $raised-button: map-get($background, raised-button);
+  $card: map-get($background, card);
   .sidenav {
-    background-color: mat-color($accent);
+    background-color: $card;
     color: $text;
+    nav {
+      a {
+        &:hover {
+          color: $raised-button;
+        }
+      }
+      .active {
+        background-color: white;
+        &:hover {
+          color: mat-color($primary);
+        }
+      }
+    }
   }
   .header-spacer {
     border-bottom: $divider solid 1px;
-  }
-  .active {
-    background-color: white;
   }
 }
 
