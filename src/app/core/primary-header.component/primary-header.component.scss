@@ -18,6 +18,7 @@ app-primary-header {
     min-height: $header-height;
     height: $header-height;
     z-index: 2;
+    border-bottom: 1px solid #3a3a3a;
     .mat-display-1 {
       margin: 30px 16px;
       @include breakpoint-sidenavOpen-media {

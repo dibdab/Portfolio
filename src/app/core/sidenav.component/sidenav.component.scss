@@ -14,6 +14,7 @@
 .sidenav {
   min-width: $sidenav-width;
   max-width: $sidenav-width;
+  border-right: 1px solid #3a3a3a;
   height: 100vh;
   top: 0;
   left: 0;
@@ -34,7 +35,7 @@
   }
   .header-spacer {
     height: 7.5%;
-    border: 1px solid black;
+    border-bottom: 1px solid #3a3a3a;
     position: relative;
     button {
       padding: 20px 0;
