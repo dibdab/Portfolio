@@ -15,19 +15,23 @@ $electron-sun-theme: mat-light-theme($electron-sun-primary, $electron-sun-accent
 @include angular-material-theme($electron-sun-theme);
 // Define an alternate dark theme.
 $electron-moon-primary: mat-palette($mat-blue-grey);
-$electron-moon-accent: mat-palette($mat-cyan, A200, A100, A400);
+$electron-moon-accent: mat-palette($mat-deep-purple, A200, A100, A400);
 $electron-moon-theme: mat-dark-theme($electron-moon-primary, $electron-moon-accent);
 // Include the alternative theme styles inside of a block with a CSS class. You can make this
 // CSS class whatever you want. In this example, any component inside of an element with
 // `.unicorn-dark-theme` will be affected by this alternate dark theme instead of the default theme.
-.electron-moon-theme {
-  @include angular-material-theme($electron-moon-theme);
-}
-
 @mixin custom-compotents($theme) {
   @include navbar-theme($theme);
   @include primary-header-theme($theme);
   @include sidenav-theme($theme);
 }
 
-@include custom-compotents($electron-sun-theme);
+.electron-sun-theme {
+  @include angular-material-theme($electron-sun-theme);
+  @include custom-compotents($electron-sun-theme);
+}
+
+.electron-moon-theme {
+  @include angular-material-theme($electron-moon-theme);
+  @include custom-compotents($electron-moon-theme);
+}

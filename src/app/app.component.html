@@ -1,4 +1,5 @@
-<div [class.uimask-scrollblock]="uimaskVisibility === 'visible'" class="app-content mat-typography mat-app-background">
+<div [ngClass]="{'electron-sun-theme': activeTheme === 'sun', 'electron-moon-theme': activeTheme === 'moon'}" [class.uimask-scrollblock]="uimaskVisibility === 'visible'"
+    class="app-content mat-typography mat-app-background">
     <app-primary-header (callChangeSidenavState)="appsidenav.changeSidenavState(); changeUimaskState();"></app-primary-header>
     <app-sidenav #appsidenav></app-sidenav>
     <div class="doc-wrapper">

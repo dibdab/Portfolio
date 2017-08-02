@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
     private sidenavComponent: SidenavComponent;
     private router: Router;
     private uimaskVisibility = 'hidden';
+    private activeTheme = 'sun';
 
     constructor(router: Router) {
         this.router = router;

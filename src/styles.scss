@@ -2,7 +2,7 @@
 @import 'app/styles/variables.scss';
 @import 'app/styles/mixins.scss';
 @import '~font-awesome/scss/font-awesome.scss';
-@import 'app/styles/electron-sun-theme.scss';
+@import 'app/styles/_themes.scss';
 body {
   @include font-stack;
   margin: 0;
@@ -21,12 +21,4 @@ body {
 
 .flex-spacer {
   flex: auto;
-}
-
-.active {
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
-  transform: translate3d(0, 0, 0);
-  transition: background .4s cubic-bezier(.25, .8, .25, 1), box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
-  color: rgba(0, 0, 0, 0.87);
-  background-color: white;
 }
