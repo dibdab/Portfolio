@@ -1,5 +1,5 @@
 <div class="sidenav" #sidenav [@sidenavState]="sidenavState">
-    <div class="header-spacer">
+    <div class="sidenav-header">
     </div>
     <nav>
         <a routerLink="aboutme" routerLinkActive="active" md-button>
@@ -11,6 +11,15 @@
         <div class="flex-spacer"></div>
         <a href="https://github.com/dibdab/portfolio" md-button>
             Github <md-icon aria-label="hidden" fontSet="fontawesome" fontIcon="fa-github"></md-icon>
-    </a>
+        </a>
     </nav>
+    <div class="sidenav-footer">
+        <label class="app-switch" aria-label="hidden">
+            <md-icon fontSet="fontawesome" fontIcon="fa-sun-o" aria-label="hidden"></md-icon>
+            <input (change)="themeToggle.emit(this.isActiveThemeDark);" [(ngModel)]="isActiveThemeDark" class="app-switch-input" type="checkbox">
+            <span class="app-switch-slider"></span>
+            <md-icon fontSet="fontawesome" fontIcon="fa-moon-o" aria-label="hidden"></md-icon>
+        </label>
+    </div>
+
 </div>

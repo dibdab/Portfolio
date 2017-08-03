@@ -12,9 +12,8 @@ import 'rxjs/RX';
 export class PrimaryHeaderComponent implements OnInit {
     @Output() callChangeSidenavState = new EventEmitter();
     @Output() uimaskToggle = new EventEmitter();
-    @Output() themeToggle = new EventEmitter();
     title: string;
-    isActiveThemeDark = false;
+
     constructor(private route: ActivatedRoute, router: Router) {
         router.events
             .filter(e => e instanceof NavigationEnd)

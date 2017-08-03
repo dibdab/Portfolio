@@ -5,12 +5,4 @@
         </button>
     </div>
     <h1 class="mat-display-1">{{title}}</h1>
-    <div class="flex-spacer"></div>
-
-    <label class="app-switch" aria-label="hidden">
-        <md-icon fontSet="fontawesome" fontIcon="fa-sun-o" aria-label="hidden"></md-icon>
-        <input (change)="themeToggle.emit(this.isActiveThemeDark);" [(ngModel)]="isActiveThemeDark" class="app-switch-input" type="checkbox">
-        <span class="app-switch-slider"></span>
-        <md-icon fontSet="fontawesome" fontIcon="fa-moon-o" aria-label="hidden"></md-icon>
-    </label>
 </div>

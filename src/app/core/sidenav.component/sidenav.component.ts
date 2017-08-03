@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { AppSettings } from '../../classes/app-settings';
 
@@ -22,7 +22,9 @@ import { AppSettings } from '../../classes/app-settings';
 
 export class SidenavComponent implements OnInit {
     @ViewChild('sidenav') sidenav;
+    @Output() themeToggle = new EventEmitter();
     sidenavState: string;
+    isActiveThemeDark = false;
 
     ngOnInit() {
         if (window.innerWidth < AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
