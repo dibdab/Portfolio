@@ -1,6 +1,6 @@
-<div [ngClass]="{'electron-sun-theme': activeTheme === 'sun', 'electron-moon-theme': activeTheme === 'moon'}" [class.uimask-scrollblock]="uimaskVisibility === 'visible'"
+<div [ngClass]="{'electron-sun-theme': !appprimaryheader.isActiveThemeDark, 'electron-moon-theme': appprimaryheader.isActiveThemeDark}" [class.uimask-scrollblock]="uimaskVisibility === 'visible'"
     class="app-content mat-typography mat-app-background">
-    <app-primary-header (callChangeSidenavState)="appsidenav.changeSidenavState(); changeUimaskState();"></app-primary-header>
+    <app-primary-header #appprimaryheader (callChangeSidenavState)="appsidenav.changeSidenavState(); changeUimaskState();"></app-primary-header>
     <app-sidenav #appsidenav></app-sidenav>
     <div class="doc-wrapper">
         <router-outlet></router-outlet>

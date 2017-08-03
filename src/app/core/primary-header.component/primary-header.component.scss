@@ -1,17 +1,34 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 @mixin primary-header-theme ($theme) {
-  $primary: map-get($theme, primary);
+  $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
   $text: map-get($foreground, text);
+  $background-colour: map-get($background, background);
   app-primary-header>.primary-header-wrapper {
     background-color: mat-color($primary);
     color: $text;
+  }
+  .app-switch {
+    & input {
+      &:checked+.app-switch-slider::before {
+        background-color: mat-color($accent);
+      }
+    }
+    .app-switch-slider {
+      background-color: $background-colour;
+      &::before {
+        background-color: mat-color($accent);
+      }
+    }
   }
 }
 
 app-primary-header {
   .primary-header-wrapper {
+    transition: $theme-change-transistion;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
     position: fixed;
     width: 100%;
@@ -38,6 +55,57 @@ app-primary-header {
         width: $header-height;
         height: 100%;
       }
+    }
+  }
+}
+
+.app-switch {
+  margin: auto 20px;
+  position: relative;
+  width: 60px;
+  height: 10px;
+  md-icon {
+    font-size: 18px;
+  }
+  md-icon:first-of-type {
+    left: -20px;
+    position: absolute;
+    top: -3px;
+  }
+  md-icon:last-of-type {
+    right: -2px;
+    position: absolute;
+    top: -3px;
+  }
+  input {
+    position: fixed;
+    left: -99999px;
+    &:checked+.app-switch-slider::before {
+      left: 15px;
+      box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+    }
+  }
+  .app-switch-slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 35px;
+    height: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 200ms $mat-anim-curve;
+    &::before {
+      position: absolute;
+      content: "";
+      top: -5px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      transition: left 200ms $mat-anim-curve, background-color 200ms $mat-anim-curve, box-shadow 200ms $mat-anim-curve;
+      box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.3);
     }
   }
 }

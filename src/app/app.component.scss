@@ -3,6 +3,7 @@
 .app-content {
   margin-top: $header-height;
   z-index: 1;
+  transition: $theme-change-transistion;
 }
 
 .doc-wrapper {

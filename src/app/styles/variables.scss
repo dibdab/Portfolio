@@ -7,3 +7,6 @@ $breakpoint-l: 980px;
 $breakpoint-m: 780px;
 $breakpoint-s: 580px;
 $breakpoint-xs: 380px;
+$mat-anim-curve: cubic-bezier(.4, 0, .2, 1);
+$theme-change-transistion: background-color 200ms $mat-anim-curve,
+color 200ms $mat-anim-curve;

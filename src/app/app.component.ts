@@ -27,8 +27,8 @@ export class AppComponent implements OnInit {
     @ViewChild(SidenavComponent)
     private sidenavComponent: SidenavComponent;
     private router: Router;
-    private uimaskVisibility = 'hidden';
-    private activeTheme = 'moon';
+    uimaskVisibility = 'hidden';
+    private isActiveThemeLight = true;
 
     constructor(router: Router) {
         this.router = router;
@@ -44,7 +44,6 @@ export class AppComponent implements OnInit {
             }
         });
     }
-
 
     @HostListener('window:resize', ['$event']) onResize(event) {
         if (event.target.innerWidth >= AppSettings.SIDENAV_WIDTH_BREAKPOINT) {
@@ -64,4 +63,6 @@ export class AppComponent implements OnInit {
             this.uimaskVisibility = 'hidden';
         }
     }
+
+    // TODO move theme switch and uimask to own components, theme switcher as generic slide toogle component in shared and uimask as core
 }
