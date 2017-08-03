@@ -14,12 +14,11 @@
         </a>
     </nav>
     <div class="sidenav-footer">
-        <label class="app-switch" aria-label="hidden">
+        <label class="app-switch no-select" aria-label="hidden">
             <md-icon fontSet="fontawesome" fontIcon="fa-sun-o" aria-label="hidden"></md-icon>
-            <input (change)="themeToggle.emit(this.isActiveThemeDark);" [(ngModel)]="isActiveThemeDark" class="app-switch-input" type="checkbox">
-            <span class="app-switch-slider"></span>
+            <input (change)="themeToggle.emit(this.isActiveThemeDark);" [(ngModel)]="isActiveThemeDark" class="app-switch-input no-select" type="checkbox">
+            <span class="app-switch-slider no-select"></span>
             <md-icon fontSet="fontawesome" fontIcon="fa-moon-o" aria-label="hidden"></md-icon>
         </label>
     </div>
-
 </div>
