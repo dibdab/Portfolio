@@ -34,13 +34,15 @@
   }
   .app-switch {
     & input {
-      &:checked+.app-switch-slider::before {
-        background-color: mat-color($accent);
+      &:checked+.app-switch-slider {
+        .switch-thumb {
+          background-color: mat-color($accent);
+        }
       }
     }
     .app-switch-slider {
       background-color: mat-color($primary);
-      &::before {
+      .switch-thumb {
         background-color: mat-color($accent);
       }
     }
@@ -115,9 +117,11 @@
   input {
     position: fixed;
     left: -99999px;
-    &:checked+.app-switch-slider::before {
-      left: 15px;
-      box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+    &:checked+.app-switch-slider {
+      .switch-thumb {
+        left: 15px;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+      }
     }
   }
   .app-switch-slider {
@@ -131,7 +135,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 200ms $mat-anim-curve;
-    &::before {
+    .switch-thumb {
       position: absolute;
       content: "";
       top: -5px;

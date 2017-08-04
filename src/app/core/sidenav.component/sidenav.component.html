@@ -17,7 +17,9 @@
         <label class="app-switch no-select" aria-label="hidden">
             <md-icon fontSet="fontawesome" fontIcon="fa-sun-o" aria-label="hidden"></md-icon>
             <input (change)="themeToggle.emit(this.isActiveThemeDark);" [(ngModel)]="isActiveThemeDark" class="app-switch-input no-select" type="checkbox">
-            <span class="app-switch-slider no-select"></span>
+            <span class="app-switch-slider no-select">
+                <span md-ripple [mdRippleCentered]="true" [mdRippleUnbounded]="true" class="switch-thumb no-select"></span>
+            </span>
             <md-icon fontSet="fontawesome" fontIcon="fa-moon-o" aria-label="hidden"></md-icon>
         </label>
     </div>
