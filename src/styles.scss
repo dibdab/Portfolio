@@ -1,6 +1,7 @@
 //AOT compiation so all paths need to be relative and match file name and file extenstion exactly
 @import 'app/styles/variables.scss';
 @import 'app/styles/mixins.scss';
+@import 'app/styles/elevation-mixin.scss';
 @import '~font-awesome/scss/font-awesome.scss';
 @import 'app/styles/_themes.scss';
 body {

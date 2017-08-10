@@ -2,9 +2,11 @@
 // have to load a single css file for Angular Material in your app.
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
+@import '../app.component';
 @import '../core/navbar.component/navbar.component';
 @import '../core/primary-header.component/primary-header.component';
 @import '../core/sidenav.component/sidenav.component';
+@import '../shared/components/card.component/card.component';
 // **Be sure that you only ever include this mixin once!**
 @include mat-core();
 // Define the default theme (same as the example above).
@@ -21,9 +23,11 @@ $electron-moon-theme: mat-dark-theme($electron-moon-primary, $electron-moon-acce
 // CSS class whatever you want. In this example, any component inside of an element with
 // `.unicorn-dark-theme` will be affected by this alternate dark theme instead of the default theme.
 @mixin custom-compotents($theme) {
+  @include app-theme($theme);
   @include navbar-theme($theme);
   @include primary-header-theme($theme);
   @include sidenav-theme($theme);
+  @include card-theme($theme);
 }
 
 .electron-sun-theme {

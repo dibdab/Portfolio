@@ -1,5 +1,13 @@
 @import 'styles/mixins.scss';
 @import 'styles/variables.scss';
+@mixin app-theme($theme) {
+  $background: map-get($theme, background);
+  $background-colour: map-get($background, background);
+  .app-content {
+    background-color: $background-colour;
+  }
+}
+
 .app-content {
   margin-top: $header-height;
   z-index: 1;

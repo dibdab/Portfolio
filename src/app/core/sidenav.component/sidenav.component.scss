@@ -8,9 +8,9 @@
   $text: map-get($foreground, text);
   $divider: map-get($foreground, divider);
   $selected-button: map-get($background, selected-button);
-  $background-colour: map-get($background, background);
+  $sidenav-colour: map-get($background, card);
   .sidenav {
-    background-color: $background-colour;
+    background-color: $sidenav-colour;
     color: $text;
     border-right: 1px solid $divider;
     nav {

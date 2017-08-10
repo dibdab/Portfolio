@@ -1,12 +1,12 @@
 // All variables should be in here then imported to other files
 $fa-font-path: '~font-awesome/fonts';
-$header-height: 100px;
-$sidenav-width: 260px;
+$header-height: 104px;
+$sidenav-width: 256px;
 $breakpoint-xl: 1340px;
-$breakpoint-l: 980px;
-$breakpoint-m: 780px;
-$breakpoint-s: 580px;
-$breakpoint-xs: 380px;
+$breakpoint-l: 960px;
+$breakpoint-m: 720px;
+$breakpoint-s: 560px;
+$breakpoint-xs: 400px;
 $mat-anim-curve: cubic-bezier(.4, 0, .2, 1);
 $theme-change-transistion: background-color 200ms $mat-anim-curve,
 color 200ms $mat-anim-curve;

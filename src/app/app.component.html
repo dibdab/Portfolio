@@ -1,9 +1,10 @@
-<div [ngClass]="{'electron-sun-theme': !appsidenav.isActiveThemeDark, 'electron-moon-theme': appsidenav.isActiveThemeDark}" [class.uimask-scrollblock]="uimaskVisibility === 'visible'"
-    class="app-content mat-typography mat-app-background">
-    <app-primary-header (callChangeSidenavState)="appsidenav.changeSidenavState(); changeUimaskState();"></app-primary-header>
-    <app-sidenav #appsidenav></app-sidenav>
-    <div class="doc-wrapper">
-        <router-outlet></router-outlet>
+<div [ngClass]="{'electron-sun-theme': !appsidenav.isActiveThemeDark, 'electron-moon-theme': appsidenav.isActiveThemeDark}">
+    <div class="app-content mat-typography" [class.uimask-scrollblock]="uimaskVisibility === 'visible'">
+        <app-primary-header (callChangeSidenavState)="appsidenav.changeSidenavState(); changeUimaskState();"></app-primary-header>
+        <app-sidenav #appsidenav></app-sidenav>
+        <div class="doc-wrapper">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
 <div [@uimaskVisibility]="uimaskVisibility" (click)="changeUimaskState(); appsidenav.changeSidenavState();" class="ui-mask"
