@@ -1,0 +1,11 @@
+.gallery-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: space-evenly;
+  .card-component {
+    flex-basis: 320px;
+    min-height: 408px;
+    margin: 8px;
+  }
+}

@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { MaterialModule } from './material.module';
 import { DocViewerComponent } from './components/doc-viewer.component/doc-viewer.component';
-import { CardComponent } from './components/card.component/card.component';
+import { CardModule } from './components/card.component/index';
 
 
 @NgModule({
-    imports: [CommonModule, MaterialModule],
-    exports: [CommonModule, MaterialModule, DocViewerComponent, CardComponent],
-    declarations: [DocViewerComponent, CardComponent],
+    imports: [CommonModule, MaterialModule, CardModule],
+    exports: [CommonModule, MaterialModule, DocViewerComponent, CardModule],
+    declarations: [DocViewerComponent],
     providers: [],
 })
 export class SharedModule {

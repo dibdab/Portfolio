@@ -2,7 +2,7 @@
     <div class="app-content mat-typography" [class.uimask-scrollblock]="uimaskVisibility === 'visible'">
         <app-primary-header (callChangeSidenavState)="appsidenav.changeSidenavState(); changeUimaskState();"></app-primary-header>
         <app-sidenav #appsidenav></app-sidenav>
-        <div class="doc-wrapper">
+        <div class="app-wrapper">
             <router-outlet></router-outlet>
         </div>
     </div>

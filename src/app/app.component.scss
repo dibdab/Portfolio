@@ -12,29 +12,32 @@
   margin-top: $header-height;
   z-index: 1;
   transition: $theme-change-transistion;
+  min-height: calc(100vh - #{$header-height});
+  height: calc(100% - #{$header-height});
 }
 
-.doc-wrapper {
-  margin: 0 auto;
+.app-wrapper {
   display: block;
   padding: 40px 16px;
+  min-height: calc(100vh - (#{$header-height} + 80px));
+  height: calc(100% - (#{$header-height} + 80px));
   @include breakpoint-xs-media {
-    width: 320px;
+    min-width: 320px;
   }
   @include breakpoint-s-media {
-    width: 540px;
+    min-width: 540px;
   }
   @include breakpoint-m-media {
-    width: 740px;
+    min-width: 740px;
   }
   @include breakpoint-l-media {
-    width: 940px;
+    min-width: 940px;
   }
   @include breakpoint-sidenavOpen-media {
-    padding-left: $sidenav-width;
+    padding-left: calc(#{$sidenav-width} + 16px);
   }
   @include breakpoint-xl-media {
-    width: 1160px;
+    min-width: 1160px;
   }
 }
 
@@ -54,6 +57,6 @@
 }
 
 .uimask-scrollblock {
-  height: calc(100vh - 100px);
+  height: calc(100vh - #{$header-height});
   overflow-y: hidden;
 }

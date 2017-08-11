@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Directive, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'app-card',
     templateUrl: 'card.component.html',
-    styleUrls: ['./card.component.scss']
+    styleUrls: ['./card.component.scss'],
+    host: { 'class': 'card-component' }, // Ignore tslint - host metadata preferred here, hostbindings would require extra code in the class
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class CardComponent implements OnInit {
-    constructor() { }
 
-    ngOnInit() { }
-}
+export class CardComponent { }
+
+@Directive({
+    selector: 'app-card-image', // Ignore tslint - selector needs to be element to apply class
+    host: { 'class': 'card-component-image' }
+})
+
+export class CardImageDirective { }
