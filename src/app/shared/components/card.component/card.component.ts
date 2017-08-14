@@ -1,26 +1,55 @@
 import { Component, Directive, ChangeDetectionStrategy } from '@angular/core';
 
-@Component({
-    selector: 'app-card',
-    templateUrl: 'card.component.html',
-    styleUrls: ['./card.component.scss'],
-    host: { 'class': 'card-component' }, // Ignore tslint - host metadata preferred here, hostbindings would require extra code in the class
-    changeDetection: ChangeDetectionStrategy.OnPush
-})
-
-
-export class CardComponent { }
-
 @Directive({
-    selector: 'app-card-image', // Ignore tslint - selector needs to be element to apply class
-    host: { 'class': 'card-component-image' }
+    selector: '[appCardImage]',
+    host: { 'class': 'card-component-image' } // Ignore tslint - host metadata preferred here, hostbindings would require extra code in the class
 })
 
 export class CardImageDirective { }
 
 @Directive({
-    selector: 'app-card-actions',
+    selector: '[appCardDescription]',
+    host: { 'class': 'card-component-description' }
+})
+
+export class CardDescriptionDirective { }
+
+@Directive({
+    selector: '[appCardActions]',
     host: { 'class': 'card-component-actions' }
 })
 
-export class CardIActionsDirective { }
+export class CardActionsDirective { }
+
+@Directive({
+    selector: '[appCardTitle]',
+    host: { 'class': 'card-component-title' }
+})
+
+export class CardTitleDirective { }
+
+@Directive({
+    selector: '[appCardSubtitle]',
+    host: { 'class': 'card-component-subtitle' }
+})
+
+export class CardSubtitleDirective { }
+
+@Component({
+    selector: 'app-card-header',
+    templateUrl: 'card.component.header.html',
+    host: { 'class': 'card-component-header' },
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+
+export class CardHeaderComponent { }
+
+@Component({
+    selector: 'app-card',
+    templateUrl: 'card.component.html',
+    styleUrls: ['./card.component.scss'],
+    host: { 'class': 'card-component' },
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+
+export class CardComponent { }

@@ -1,16 +1,34 @@
 
 import { NgModule } from '@angular/core';
-import { CardComponent, CardImageDirective } from './card.component';
+import {
+    CardActionsDirective,
+    CardTitleDirective,
+    CardSubtitleDirective,
+    CardDescriptionDirective,
+    CardImageDirective,
+    CardHeaderComponent,
+    CardComponent
+} from './card.component';
 
 
 @NgModule({
     exports: [
-        CardComponent,
-        CardImageDirective
+        CardActionsDirective,
+        CardTitleDirective,
+        CardSubtitleDirective,
+        CardDescriptionDirective,
+        CardImageDirective,
+        CardHeaderComponent,
+        CardComponent
     ],
     declarations: [
-        CardComponent,
-        CardImageDirective
+        CardActionsDirective,
+        CardTitleDirective,
+        CardSubtitleDirective,
+        CardDescriptionDirective,
+        CardImageDirective,
+        CardHeaderComponent,
+        CardComponent
     ],
 })
 export class CardModule { }

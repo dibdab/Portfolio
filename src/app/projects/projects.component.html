@@ -1,27 +1,22 @@
 <div class="gallery-wrapper">
     <app-card>
-        <app-card-image></app-card-image>
-    </app-card>
-    <div class="card-component">
-        <div class="card-component-header">
-            <div class="card-component-subtitle">
+        <app-card-header>
+            <div appCardSubtitle>
                 Full Website
             </div>
-            <div class="card-component-title">
+            <div appCardTitle>
                 Project 1
             </div>
+        </app-card-header>
+        <img appCardImage src="..\..\assets\images\sa-login.png" alt="Image of Project">
+        <div appCardDescription>
+            Picure of first projext, unfortunately its locked down so can only provide images on this projectss. this projects was developed
+            in Agular1 with a backend of .net web apis.
         </div>
-        <div class="card-component-body">
-            <img class="card-component-image" src="..\..\assets\images\sa-login.png" alt="Image of Project">
-            <div class="card-component-description">
-                Picure of first projext, unfortunately its locked down so can only provide images on this projectss. this projects was developed
-                in Agular1 with a backend of .net web apis.
-            </div>
-        </div>
-        <div class="card-component-actions">
+        <div appCardActions>
             <button md-button type="">Link</button>
-            <button md-button type="">Sourecode</button>
+            <button md-button type="">Source Code</button>
             <button md-button type="">Gallery</button>
         </div>
-    </div>
+    </app-card>
 </div>
