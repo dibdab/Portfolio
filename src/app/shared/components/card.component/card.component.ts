@@ -17,3 +17,10 @@ export class CardComponent { }
 })
 
 export class CardImageDirective { }
+
+@Directive({
+    selector: 'app-card-actions',
+    host: { 'class': 'card-component-actions' }
+})
+
+export class CardIActionsDirective { }

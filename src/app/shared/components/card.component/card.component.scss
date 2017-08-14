@@ -4,9 +4,25 @@
 @mixin card-theme($theme) {
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
+  $accent: map-get($theme, accent);
+  $secondary-text: map-get($foreground, secondary-text);
+  $text: map-get($foreground, text);
   $card-background: map-get($background, card);
   .card-component {
     background-color: $card-background;
+    .card-component-title {
+      color: $text;
+    }
+    .card-component-subtitle {
+      color: $secondary-text;
+    }
+    .card-component-actions {
+      button {
+        &:hover {
+          color: mat-color($accent);
+        }
+      }
+    }
   }
 }
 
@@ -19,11 +35,27 @@
     padding: 16px;
     height: 40px;
   }
-  .card-component-image {
-    height: 56.25%;
+  .card-component-title {
+    font-size: 18px;
+    font-weight: bold;
   }
-  .card-component-text {
+  .card-component-subtitle {
+    font-weight: bold;
+  }
+  .card-component-image {
+    max-height: 56.25%;
+    max-width: 100%;
+  }
+  .card-component-description {
     padding: 16px;
+  }
+  .card-component-actions {
+    display: flex;
+    justify-content: space-evenly;
+    button {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
   }
   .card-component-footer {
     padding: 8px;
