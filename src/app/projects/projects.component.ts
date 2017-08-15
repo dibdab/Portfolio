@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Project } from './classes/project';
+import { ProjectsService } from './projects.service';
 
 @Component({
     selector: 'app-projects',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
     styleUrls: ['projects.component.scss']
 })
 export class ProjectsComponent {
-
+    projects: Project[];
 }
