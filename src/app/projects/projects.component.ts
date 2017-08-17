@@ -12,6 +12,7 @@ export class ProjectsComponent implements OnInit {
     projects: Project[];
     private projectsService: ProjectsService;
 
+    // TODO look at HttpClient docs to improve this
     getProjects(): Project[] {
         this.projects = this.projectsService.getProjects()
             .then((projects) => {

@@ -10,6 +10,7 @@ const URL_PROJECTS = './projects.json';
 export class ProjectsService {
     constructor(private _http: Http) { }
 
+    // TODO look at HttpClient docs to improve this
     getProjects(): Project[] {
         return this._http.get<ProjectsResults>(URL_PROJECTS)
             .sub((response: Response) => response.json())
@@ -20,4 +21,5 @@ export class ProjectsService {
                 return Promise.reject(err);
             });
     }
+
 }
