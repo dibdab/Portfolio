@@ -12,8 +12,14 @@ export class ProjectsComponent implements OnInit {
     projects: Project[];
     private projectsService: ProjectsService;
 
-    getProjects() {
-        this.projects = this.projectsService.getProjects();
+    getProjects(): Project[] {
+        this.projects = this.projectsService.getProjects()
+            .then((projects) => {
+                this.projects = projects.projects;
+            })
+            .catch((err: any) => {
+                console.log(err);
+            });
     }
 
     ngOnInit() {
