@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from './classes/project';
+import { Project, ProjectsResponse } from './classes/project';
 import { ProjectsService } from './projects.service';
 
 @Component({
@@ -10,20 +10,15 @@ import { ProjectsService } from './projects.service';
 })
 export class ProjectsComponent implements OnInit {
     projects: Project[];
-    private projectsService: ProjectsService;
+
+    constructor(private projectsService: ProjectsService) { }
 
     // TODO look at HttpClient docs to improve this
     getProjects(): Project[] {
-        this.projects = this.projectsService.getProjects()
-            .then((projects) => {
-                this.projects = projects.projects;
-            })
-            .catch((err: any) => {
-                console.log(err);
-            });
+        return this.projectsService.getProjects();
     }
 
     ngOnInit() {
-        this.getProjects();
+        this.projects = this.getProjects();
     }
 }

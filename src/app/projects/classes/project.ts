@@ -1,7 +1,7 @@
 import { ProjectImage } from './projectImage';
 import { ProjectAction } from './projectAction';
 
-interface ProjectsResults {
+export interface ProjectsResponse {
     results: Project[];
 };
 

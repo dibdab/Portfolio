@@ -1,25 +1,43 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 
-import { Project, ProjectsResults } from './classes/project';
-
-const URL_PROJECTS = './projects.json';
+import { Project, ProjectsResponse } from './classes/project';
+import { PROJECTS } from './projects';
+const URL_PROJECTS = 'https://dibdab.github.io/portfolio/assets/mockedBackend/projects.json';
 
 @Injectable()
 export class ProjectsService {
-    constructor(private _http: Http) { }
+    results: Project[];
 
-    // TODO look at HttpClient docs to improve this
+    constructor(private _http: HttpClient) { }
+
+    // TODO Implement http caching and XSRF tokens when have actual backend.
     getProjects(): Project[] {
-        return this._http.get<ProjectsResults>(URL_PROJECTS)
-            .sub((response: Response) => response.json())
-            .toPromise()
-            .succes
-            .catch((err: any) => {
-                console.log(err);
-                return Promise.reject(err);
-            });
-    }
+        this._http.get<ProjectsResponse>(URL_PROJECTS)
+            .retry(3)
+            .subscribe(
+            data => {
+                this.results = data.results;
+            },
+            err => {
+                // TODO Add actual error handling once attached to backend.
+                if (err.error instanceof Error) {
+                    // A client-side or network error occurred. Handle it accordingly.
+                    console.log('An error occurred:', err.error.message);
+                } else {
+                    // The backend returned an unsuccessful response code.
+                    // The response body may contain clues as to what went wrong.
+                    console.log(`Backend returned code ${err.status}, body was: ${err.error}`);
+                }
+                this.results = err.results;
+            }
+            );
+        return this.results;
+    };
 
+    /*     getProjects(): Project[] {
+            return PROJECTS;
+        };
+    */
 }

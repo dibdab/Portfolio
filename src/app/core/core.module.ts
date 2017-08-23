@@ -3,12 +3,14 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { NavbarComponent } from './navbar.component/navbar.component';
 import { PrimaryHeaderComponent } from './primary-header.component/primary-header.component';
 import { SidenavComponent } from './sidenav.component/sidenav.component';
 
 @NgModule({
-    imports: [SharedModule, RouterModule, FormsModule],
+    imports: [SharedModule, RouterModule, FormsModule, HttpClientModule],
     exports: [NavbarComponent, PrimaryHeaderComponent, SidenavComponent],
     declarations: [NavbarComponent, PrimaryHeaderComponent, SidenavComponent],
     providers: [],

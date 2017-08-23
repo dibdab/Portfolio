@@ -1,8 +1,8 @@
 <div class="gallery-wrapper">
-    <app-card>
+    <app-card *ngFor="let project of projects">
         <app-card-header>
             <div appCardSubtitle>
-                Full Website
+                {{project.type}}
             </div>
             <div appCardTitle>
                 Project 1
