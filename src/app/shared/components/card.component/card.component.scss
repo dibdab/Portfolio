@@ -17,6 +17,7 @@
       color: $secondary-text;
     }
     .card-component-actions {
+      color: $text;
       button {
         &:hover {
           color: mat-color($accent);
