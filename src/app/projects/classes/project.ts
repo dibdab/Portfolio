@@ -2,7 +2,9 @@ import { ProjectImage } from './projectImage';
 import { ProjectAction } from './projectAction';
 
 export interface ProjectsResponse {
-    results: Project[];
+    responseStatus: number;
+    responseMessage: string;
+    responseData: Project[];
 };
 
 export class Project {

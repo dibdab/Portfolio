@@ -14,11 +14,14 @@ export class ProjectsComponent implements OnInit {
     constructor(private projectsService: ProjectsService) { }
 
     // TODO look at HttpClient docs to improve this
-    getProjects(): Project[] {
-        return this.projectsService.getProjects();
+    getProjects() {
+        return this.projectsService.getProjects((data) => {
+            console.log(data.responseData);
+            this.projects = data.responseData;
+        });
     }
 
     ngOnInit() {
-        this.projects = this.getProjects();
+        this.getProjects();
     }
 }

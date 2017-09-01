@@ -64,5 +64,5 @@ export class AppComponent implements OnInit {
         }
     }
 
-    // TODO move theme switch and uimask to own components, theme switcher as generic slide toogle component in shared and uimask as core
+    // TODO move theme switch and uimask to own components, theme switcher as generic slide toggle component in shared and uimask as core
 }
