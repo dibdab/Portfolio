@@ -48,7 +48,8 @@
     display: block;
   }
   .card-component-image {
-    max-height: 56.25%;
+    //Max-height caused issues when menu open was due to size of card expanding.
+    //max-height: 56.25%;
     max-width: 100%;
   }
   .card-component-description {
