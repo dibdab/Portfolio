@@ -1,8 +1,9 @@
-import { SidenavComponent } from './core/sidenav.component/sidenav.component';
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+
 import { AppSettings } from './classes/app-settings';
+import { SidenavComponent } from './core/sidenav.component/sidenav.component';
 
 @Component({
     selector: 'app-root',

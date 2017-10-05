@@ -1,17 +1,16 @@
+import 'hammerjs';
+
 import { NgModule } from '@angular/core';
+import { MdIconRegistry } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import 'hammerjs';
-import { MdIconRegistry } from '@angular/material';
 
-import { AppComponent } from './app.component';
-
+import { AboutModule } from './about/about.module';
 import { AppRoutingModule } from './app-routing.module';
-import { MaterialModule } from './shared/material.module';
+import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { AboutMeModule } from './aboutme/aboutme.module';
-
 import { PageNotFoundComponent } from './page-not-found.component/page-not-found.component';
+import { MaterialModule } from './shared/material.module';
 
 @NgModule({
     declarations: [
@@ -23,7 +22,7 @@ import { PageNotFoundComponent } from './page-not-found.component/page-not-found
         BrowserAnimationsModule,
         MaterialModule,
         CoreModule,
-        AboutMeModule,
+        AboutModule,
         AppRoutingModule,
     ],
     bootstrap: [AppComponent]

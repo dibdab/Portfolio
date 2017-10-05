@@ -33,6 +33,7 @@
   height: 100%;
   border-radius: 2px;
   display: block;
+  height: 452px;
   .card-component-header {
     padding: 16px;
     height: 40px;
@@ -48,8 +49,6 @@
     display: block;
   }
   .card-component-image {
-    //Max-height caused issues when menu open was due to size of card expanding.
-    //max-height: 56.25%;
     max-width: 100%;
   }
   .card-component-description {
